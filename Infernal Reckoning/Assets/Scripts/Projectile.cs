@@ -42,6 +42,7 @@ public class Projectile : MonoBehaviour
     //Unity function that will call when this object collides with another collider
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collided" + collision.gameObject.name);
         if (isEnemyBullet == false)
         {
 
@@ -49,7 +50,7 @@ public class Projectile : MonoBehaviour
             if (collision.gameObject.tag == "Enemy")
             {
                 //Check that the collision object has an EnemyHealth script
-                EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+                EnemyHealth enemyHealth = collision.gameObject.GetComponentInParent<EnemyHealth>();
                 if (enemyHealth != null)
                 {
                     enemyHealth.TakeDamage(damage);
