@@ -9,12 +9,14 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth;
     public Image healthBar;
     private GameStateManager gameStateManager;
+    private TakeDamageImage damageImage;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         gameStateManager = FindObjectOfType<GameStateManager>();
+        damageImage = FindObjectOfType<TakeDamageImage>();
     }
 
     public void TakeDamage(int damageToTake)
@@ -22,6 +24,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damageToTake;
 
         healthBar.fillAmount = currentHealth / maxHealth;
+
+        damageImage.TakeDamage();
 
         if(currentHealth > maxHealth)
         {

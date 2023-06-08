@@ -35,7 +35,6 @@ public class EnemyManagerStateMachine : MonoBehaviour
     private NavMeshAgent agent;
     private Transform player;
     private int currentPatrolIndex = 0;
-    private float attackTimer = 0;
     private bool isAttacking;
 
     [Space]
