@@ -42,6 +42,7 @@ public class EnemyManagerStateMachine : MonoBehaviour
     [Space]
     public GameObject projectile;
     public Transform spawnPosition;
+    public AudioSource blam;
 
 
 
@@ -74,11 +75,13 @@ public class EnemyManagerStateMachine : MonoBehaviour
                 agent.SetDestination(transform.position);
                 agent.transform.LookAt(new Vector3(player.position.x, transform. position.y, player.position.z));
                 spawnPosition.LookAt(player);
+                
 
                 if (!isAttacking)
                 {
                     isAttacking = true;
                     StartCoroutine(Attack());
+                    blam.Play();
                 }
             }
             else
