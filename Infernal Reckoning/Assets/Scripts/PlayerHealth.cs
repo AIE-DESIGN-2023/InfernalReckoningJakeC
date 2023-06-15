@@ -25,7 +25,11 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.fillAmount = currentHealth / maxHealth;
 
-        damageImage.TakeDamage();
+        if (damageToTake > 0)
+        {
+            damageImage.TakeDamage();
+        }
+            
 
         if(currentHealth > maxHealth)
         {

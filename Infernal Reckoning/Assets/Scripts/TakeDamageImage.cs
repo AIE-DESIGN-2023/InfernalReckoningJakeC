@@ -26,6 +26,7 @@ public class TakeDamageImage : MonoBehaviour
     {
         if (isTakingDamage)
         {
+
             //Counts the time since the last frame
             timer += Time.deltaTime;
             //Sets the red image on
@@ -38,7 +39,7 @@ public class TakeDamageImage : MonoBehaviour
                 isTakingDamage = false;
                 redScreen.enabled = false;
             }
-
+            
         }
     }
     public void TakeDamage()
