@@ -6,6 +6,13 @@ public class AmmoPickup : MonoBehaviour
 {
     //Variable for the amount of ammo to give player
     public int ammoAmount = 45;
+    
+    public float respawnTime = 1f; // Time in seconds before respawn
+
+    private GameObject originalObject;
+    private bool isRespawning = false;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -16,9 +23,20 @@ public class AmmoPickup : MonoBehaviour
             {
                 projectileManager.AddAmmo(ammoAmount);
 
-                Destroy(gameObject);
+                GetComponent<MeshRenderer>().enabled = false;
+                GetComponent<BoxCollider>().enabled = false;
+                isRespawning = true;
+                Invoke("Respawn", respawnTime);
             }
         }
+    }
+    private void Respawn()
+    {
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
+        //GameObject respawnedObject = Instantiate(originalObject, transform.position, transform.rotation);
+        //respawnedObject.SetActive(true);
+        isRespawning = false;
     }
 }
     
