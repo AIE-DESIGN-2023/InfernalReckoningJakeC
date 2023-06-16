@@ -13,8 +13,18 @@ public class PlayerHealth : MonoBehaviour
    
     public Image avatar;
     public Sprite healthy;
-    public Sprite okay;
-    public Sprite hurt;
+    public Sprite ninety;
+    public Sprite eighty;
+    public Sprite seventy;
+    public Sprite sixty;
+    public Sprite fifty;
+    public Sprite forty;
+    public Sprite thirty;
+    public Sprite twenty;
+    public Sprite ten;
+    public Sprite dead;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,10 +57,26 @@ public class PlayerHealth : MonoBehaviour
             gameStateManager.PlayerDies();
             //UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         }
-        if (currentHealth < 33)
-            avatar.sprite = hurt;
-        else if (currentHealth < 66)
-            avatar.sprite = okay;
+        if (currentHealth <= 0)
+            avatar.sprite = dead;
+        else if (currentHealth < 11)
+            avatar.sprite = ten;
+        else if (currentHealth < 21)
+            avatar.sprite = twenty;
+        else if (currentHealth < 31)
+            avatar.sprite = thirty;
+        else if (currentHealth < 41)
+            avatar.sprite = forty;
+        else if (currentHealth < 51)
+            avatar.sprite = fifty;
+        else if (currentHealth < 61)
+            avatar.sprite = sixty;
+        else if (currentHealth < 71)
+            avatar.sprite = seventy;
+        else if (currentHealth < 81)
+            avatar.sprite = eighty;
+        else if (currentHealth < 91)
+            avatar.sprite = ninety;
         else
             avatar.sprite = healthy;
 

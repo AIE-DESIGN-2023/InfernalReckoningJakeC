@@ -11,6 +11,11 @@ public class GameStateManager : MonoBehaviour
     public TMP_Text enemiesText;
     public Canvas winCanvas, loseCanvas;
     GameObject[] enemies;
+    public FirstPersonController firstPersonController;
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +40,7 @@ public class GameStateManager : MonoBehaviour
         enemiesLeft = enemies.Length;
 
         //Assign the text the value of remaining enemies
-        enemiesText.text = enemiesLeft + "/" + enemiesTotal + " enemies left";
+        enemiesText.text = enemiesLeft + "/" + enemiesTotal + " remaining";
 
         //check if there are any enemies left, if not player wins, turns on the canvas
         if(enemiesLeft == 0)
@@ -44,6 +49,9 @@ public class GameStateManager : MonoBehaviour
             winCanvas.gameObject.SetActive(true);
             //unlocks the cursor
             Cursor.lockState = CursorLockMode.None;
+            firstPersonController.DisableMovement();
+            
+            
         }
     }
     public void PlayerDies()

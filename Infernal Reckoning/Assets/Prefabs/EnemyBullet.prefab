@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3977652042967191176}
   - component: {fileID: 7802244581158176954}
   - component: {fileID: 5400509625486171911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838653877705414725}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 60
   lifetime: 6
-  damage: 5
+  damage: 10
   isEnemyBullet: 1
 --- !u!54 &5400509625486171911
 Rigidbody:

@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour
     }
 
     //Unity function that will call when this object collides with another collider
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Collided" + collision.gameObject.name);
         if (isEnemyBullet == false)
@@ -65,6 +65,7 @@ public class Projectile : MonoBehaviour
                 if(playerHealth != null)
                 {
                     playerHealth.TakeDamage(damage);
+                    Destroy(this.gameObject);
                 }
             }
         }
