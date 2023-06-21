@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 1089597499270747141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.64, z: 0}
-  m_LocalScale: {x: 5.1484694, y: 4.927587, z: 1.7788188}
+  m_LocalScale: {x: 8.780321, y: 6.1905274, z: 2.23473}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1089597500998732361}
@@ -444,7 +444,6 @@ GameObject:
   - component: {fileID: 1089597500998732372}
   - component: {fileID: 1089597500998732370}
   - component: {fileID: 1089597500998732373}
-  - component: {fileID: 1475222136}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -559,7 +558,7 @@ MonoBehaviour:
   attackDelay: 2
   projectile: {fileID: 1838653877705414725, guid: 5170ff31cbbf773429cf58543ecbce22, type: 3}
   spawnPosition: {fileID: 1089597501043718432}
-  blam: {fileID: 1475222136}
+  blam: {fileID: 340649890}
 --- !u!114 &1089597500998732370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,13 +596,45 @@ NavMeshAgent:
   m_BaseOffset: 4.13
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!82 &1475222136
+--- !u!1 &1089597501043718435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089597501043718432}
+  - component: {fileID: 340649890}
+  m_Layer: 0
+  m_Name: EnemyBulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089597501043718432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089597501043718435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1089597500998732361}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &340649890
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089597500998732363}
+  m_GameObject: {fileID: 1089597501043718435}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -693,37 +724,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1089597501043718435
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1089597501043718432}
-  m_Layer: 0
-  m_Name: EnemyBulletSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1089597501043718432
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089597501043718435}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1089597500998732361}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089597501053115318
 GameObject:
   m_ObjectHideFlags: 0
